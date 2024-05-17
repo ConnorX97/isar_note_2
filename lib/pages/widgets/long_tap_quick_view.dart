@@ -76,13 +76,14 @@ class QuickViewItem extends StatelessWidget {
           children: [
             EditDeleteButton(model: model, index: index),
             IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.close,
-                  color: AppColors.buttonColor,
-                ))
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.close,
+                color: AppColors.buttonColor,
+              ),
+            ),
           ],
         )
       ],

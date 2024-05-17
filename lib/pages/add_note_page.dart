@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:note_isar/components/constants.dart';
 import 'package:note_isar/components/note_database.dart';
 import 'package:note_isar/main.dart';
@@ -14,7 +13,7 @@ class AddNotePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: const Text(
@@ -80,6 +79,7 @@ class ControlBtn extends StatelessWidget {
 
 // ignore: must_be_immutable
 class AppInput extends StatelessWidget {
+  final int? maxLine;
   TextEditingController controller;
   final int height;
   final String hint;
@@ -87,7 +87,7 @@ class AppInput extends StatelessWidget {
     super.key,
     required this.controller,
     required this.height,
-    required this.hint,
+    required this.hint, this.maxLine,
   });
   @override
   Widget build(BuildContext context) {
@@ -102,12 +102,12 @@ class AppInput extends StatelessWidget {
           style: const TextStyle(color: Colors.white, fontFamily: "Poppins"),
           cursorColor: Colors.white,
           controller: controller,
-          maxLines: null,
+          maxLines: maxLine,
           decoration: InputDecoration(
               border: InputBorder.none,
               hintText: hint,
-              hintStyle:
-                  TextStyle(color: Colors.white38, fontFamily: "Poppins")),
+              hintStyle: const TextStyle(
+                  color: Colors.white38, fontFamily: "Poppins")),
         ),
       ),
     );

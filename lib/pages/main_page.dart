@@ -37,8 +37,7 @@ class _MainPageState extends State<MainPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => AddNotePage()));
-          print(model.currentNotes.length);
+              .push(MaterialPageRoute(builder: (context) => const AddNotePage()));
         },
         backgroundColor: AppColors.buttonColor,
         child: const Icon(
@@ -66,7 +65,6 @@ class _MainPageState extends State<MainPage> {
           ),
           Expanded(
             child: ListView.builder(
-              reverse: true,
               itemCount: model.currentNotes.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
